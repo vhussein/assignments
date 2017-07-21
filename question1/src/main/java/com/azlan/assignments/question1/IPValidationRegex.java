@@ -16,8 +16,6 @@ public class IPValidationRegex {
     static FileReader fr = null;
     static List<String> validIP = new ArrayList<>();
     static List<String> inValidIP = new ArrayList<>();
-
-    static IPAddressDTO ipAddDTO = new IPAddressDTO();
     static IPAddressValidatorImpl ipAddValidator = new IPAddressValidatorImpl();
 
     private static final Logger logger = LoggerFactory.getLogger(IPValidationRegex.class);
@@ -43,9 +41,9 @@ public class IPValidationRegex {
                 fileProcessor(fileName);
 
 //                logger.info("VALID IP Address as follows");
-//                if(!ipAddDTO.getValidIP().isEmpty())
+//                if(!validIP.isEmpty())
 //                {
-//                    for (String ipAddStr : ipAddDTO.getValidIP())
+//                    for (String ipAddStr : validIP)
 //                    {
 //                        logger.info(ipAddStr);
 //                    }
@@ -58,9 +56,9 @@ public class IPValidationRegex {
 
                 //filter invalid IP
                 logger.info("INVALID IP Address as follows");
-                if(!ipAddDTO.getInvalidIP().isEmpty())
+                if(!inValidIP.isEmpty())
                 {
-                    for (String ipAddStr : ipAddDTO.getInvalidIP())
+                    for (String ipAddStr : inValidIP)
                     {
                         logger.info(ipAddStr);
                     }
@@ -119,9 +117,6 @@ public class IPValidationRegex {
         }
         finally
         {
-            ipAddDTO.setInvalidIP(inValidIP);
-            ipAddDTO.setValidIP(validIP);
-
             try {
 
                 if(br != null)
