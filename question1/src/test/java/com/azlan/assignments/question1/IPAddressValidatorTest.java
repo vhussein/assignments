@@ -2,6 +2,7 @@ package com.azlan.assignments.question1;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.tngtech.java.junit.dataprovider.DataProvider;
@@ -9,20 +10,23 @@ import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import org.junit.runner.RunWith;
 
+import java.io.IOException;
+import java.net.URL;
+
 //import org.testng.Assert;
 //import org.testng.annotations.*;
 
 /**
- * Created by Azlan on 10/7/2017.
+ * Created by Azlan on 20/7/2017.
  */
 @RunWith(DataProviderRunner.class)
 public class IPAddressValidatorTest {
 
-    private IPAddressValidator ipAddressValidator;
+    private IPAddressValidatorImpl ipAddressValidatorImpl;
 
     @Before
     public void initData(){
-        ipAddressValidator = new IPAddressValidator();
+        ipAddressValidatorImpl = new IPAddressValidatorImpl();
     }
 
     @DataProvider
@@ -48,21 +52,24 @@ public class IPAddressValidatorTest {
     }
 
 //    @Test(dataProvider = "ValidIPAddressProvider")
+//    @Ignore
     @Test
     @UseDataProvider("ValidIPAddressProvider")
     public void ValidIPAddressTest(String ip) {
-        boolean valid = ipAddressValidator.validate(ip);
-        System.out.println("IPAddress is VALID : " + ip + " , " + valid);
+        boolean valid = ipAddressValidatorImpl.validate(ip);
+        System.out.println("IPAddressDTO is VALID : " + ip + " , " + valid);
         Assert.assertEquals(true, valid);
     }
 
 //    @Test(dataProvider = "InvalidIPAddressProvider",
 //            dependsOnMethods="ValidIPAddressTest")
+//    @Ignore
     @Test
     @UseDataProvider("InvalidIPAddressProvider")
     public void InValidIPAddressTest(String ip) {
-        boolean valid = ipAddressValidator.validate(ip);
-        System.out.println("IPAddress is INVALID : " + ip + " , " + valid);
+        boolean valid = ipAddressValidatorImpl.validate(ip);
+        System.out.println("IPAddressDTO is INVALID : " + ip + " , " + valid);
         Assert.assertEquals(false, valid);
     }
+
 }
