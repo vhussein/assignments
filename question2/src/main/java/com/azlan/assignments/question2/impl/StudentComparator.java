@@ -1,5 +1,6 @@
-package com.azlan.assignments.question2;
+package com.azlan.assignments.question2.impl;
 
+import com.azlan.assignments.question2.domain.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

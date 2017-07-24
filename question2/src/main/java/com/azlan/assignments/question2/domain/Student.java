@@ -1,4 +1,4 @@
-package com.azlan.assignments.question2;
+package com.azlan.assignments.question2.domain;
 
 import lombok.*;
 import org.slf4j.Logger;

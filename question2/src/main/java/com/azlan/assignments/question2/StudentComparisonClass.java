@@ -1,5 +1,7 @@
 package com.azlan.assignments.question2;
 
+import com.azlan.assignments.question2.domain.Student;
+import com.azlan.assignments.question2.impl.StudentComparator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,39 +33,5 @@ public class StudentComparisonClass {
             logger.info(students[i].getId() + "\t" + students[i].getFirstName() + "\t"
                     + students[i].getGpa());
         }
-
-//        // 1 - sort the gpa
-//        Arrays.sort(students, new GPAComparator());
-//        logger.info("Order of students after sorting by student name is");
-//        for (int i = 0; i < students.length; i++) {
-//            logger.info(students[i].getId() + "\t" + students[i].getFirstName() + "\t"
-//                    + students[i].getGpa());
-//        }
-//
-//        // 2 - sort the name
-//        Arrays.sort(students, new NameComparator());
-//        logger.info("Order of students after sorting by student name is");
-//
-//        for (int i = 0; i < students.length; i++) {
-//            logger.info(students[i].getId() + "\t" + students[i].getFirstName() + "\t"
-//                    + students[i].getGpa());
-//        }
-//
-//        //3 - sort the id
-//        Arrays.sort(students, new IDComparator());
-//        logger.info("Order of students after sorting by student ID is");
-//
-//        for (int i = 0; i < students.length; i++) {
-//            logger.info(students[i].getId() + "\t" + students[i].getFirstName() + "\t"
-//                    + students[i].getGpa());
-//        }
-
-//        System.out.println("After sort: ");
-//        for(Student s: students){
-//            System.out.println(s);
-//        }
-
-
-
     }
 }

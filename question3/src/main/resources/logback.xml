@@ -32,7 +32,7 @@
         </layout>
     </appender>
 
-    <logger name="com.azlan.assignments.question2" level="INFO">
+    <logger name="com.azlan.assignments.question3" level="INFO">
         <appender-ref ref="STDOUT" />
     </logger>
 

@@ -1,5 +1,7 @@
 package com.azlan.assignments.question2;
 
+import com.azlan.assignments.question2.domain.Student;
+import com.azlan.assignments.question2.impl.StudentComparator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,8 +13,6 @@ public class StudentComparatorTest {
 
     private Student[] students = new Student[7];
 
-    
-    
     @Before
     public void init()
     {
@@ -27,9 +27,7 @@ public class StudentComparatorTest {
         students[6] = new Student(20, "Samar", 3.75);
 
         System.out.println("Initial input is : ");
-        for (Student s: students
-             ) {
-
+        for (Student s: students) {
             System.out.println(s);
         }
     }
@@ -38,10 +36,10 @@ public class StudentComparatorTest {
     public void studentCompareTest()
     {
         Arrays.sort(students, new StudentComparator());
-        System.out.println("Order of students after sorting by student name is");
+        System.out.println("Order of students after sorting is");
         for (int i = 0; i < students.length; i++) {
             System.out.println(students[i].getId() + "\t" + students[i].getFirstName() + "\t"
                     + students[i].getGpa());
-        } 
+        }
     }
 }
